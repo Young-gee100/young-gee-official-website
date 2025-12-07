@@ -1,40 +1,48 @@
-// Select the LOGIN link
-const loginLink = document.querySelector('a[href="#LOGIN"]');
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
 
-// Create popup variable
-let popup = null;
+    // 1. Search bar functionality
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
 
-// Show Login Popup
-function showPopup() {
-    popup = document.createElement("div");
-    popup.className = "popup-container";
+    searchInput.addEventListener("input", () => {
+        const filter = searchInput.value.toLowerCase();
 
-    popup.innerHTML = `
-        <div class="popup-box">
-            <h2>Login</h2>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button class="submit-btn">Login</button>
-            <button class="close-btn">Close</button>
-        </div>
-    `;
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
 
-    document.body.appendChild(popup);
+    // 2. Add hover animation effect for all card buttons
+    const buttons = document.querySelectorAll(".card button");
 
-    // Close popup event
-    popup.querySelector(".close-btn").addEventListener("click", closePopup);
-}
+    buttons.forEach(button => {
+        button.addEventListener("mouseenter", () => {
+            button.style.transform = "scale(1.1)";
+            button.style.transition = "transform 0.2s";
+        });
+        button.addEventListener("mouseleave", () => {
+            button.style.transform = "scale(1)";
+        });
+    });
 
-// Close Popup
-function closePopup() {
-    if (popup) {
-        popup.remove();
-        popup = null;
-    }
-}
+    // 3. Comment section submit alert
+    const commentButton = document.querySelector(".comment-section button");
+    const commentTextarea = document.querySelector(".comment-section textarea");
 
-// When LOGIN link is clicked
-loginLink.addEventListener("click", function(event) {
-    event.preventDefault(); // stop page reload
-    showPopup();
+    commentButton.addEventListener("click", () => {
+        const comment = commentTextarea.value.trim();
+        if (comment) {
+            alert("Thank you for your comment!");
+            commentTextarea.value = ""; // Clear textarea
+        } else {
+            alert("Please write a comment before submitting.");
+        }
+    });
+
 });
