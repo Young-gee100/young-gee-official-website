@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Young Gee @MW</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <input type="text" id="adminUsername" placeholder="Username">
+        <input type="password" id="adminPassword" placeholder="Password">
+        <button id="loginBtn">Login</button>
+    </div>
+
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const username = document.getElementById("adminUsername").value;
+            const password = document.getElementById("adminPassword").value;
+
+            // Simple admin check (front-end demo)
+            if(username === "admin" && password === "admin123") {
+                localStorage.setItem("isAdmin", "true"); // save login state
+                window.location.href = "admin.html";
+            } else {
+                alert("Incorrect username or password!");
+            }
+        });
+    </script>
+</body>
+</html>
