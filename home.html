@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Young Gee @MW Official Page</title>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo">
+            <!-- Replace "logo.png" with your actual logo file -->
+            <img src="howa.jpg" alt="Website Logo" height="50">
+        </div>
+        <h2 class="h2">Young Gee @MW</h2>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Downloads</a>
+            <a href="">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="">Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search projects or downloads..." id="searchInput">
+        <button>Search</button>
+    </div>
+
+    <!-- Intro Paragraph (No card) -->
+    <p class="intro-paragraph">
+        This is the official page for Young Gee @MW where you can view, download, and launch complaints regarding projects.
+    </p>
+
+    <!-- Main Cards Section -->
+    <div class="container">
+        <h2>Choose What You Want To Do</h2>
+        <div class="card-box">
+
+            <!-- Download Card -->
+            <div class="card" id="download">
+                <h3>Download Files</h3>
+                <p>Download documents, tools, and important resources.</p>
+                <button onclick="window.location.href='downloads.html'">Go to Downloads</button>
+            </div>
+
+            <!-- Projects Card -->
+            <div class="card" id="projects">
+                <h3>Available Projects</h3>
+                <p>Check all projects available for users to view or request.</p>
+                <button onclick="window.location.href='projects.html'">View Projects</button>
+            </div>
+
+            <!-- Sign In Card -->
+            <div class="card" id="login">
+                <h3>Sign In</h3>
+                <p>Access your account to manage your files or projects.</p>
+                <button onclick="window.location.href='login.html'">Sign In</button>
+            </div>
+
+            <!-- Sign Up Card -->
+            <div class="card" id="signup">
+                <h3>Create Account</h3>
+                <p>Sign up to upload your work and access premium features.</p>
+                <button onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <h3>Leave a Comment</h3>
+        <textarea placeholder="Write your comment here..." rows="5"></textarea>
+        <br>
+        <button>Submit Comment</button>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

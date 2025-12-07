@@ -1,0 +1,67 @@
+body {
+
+    background-image: url(log.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+margin-top: 100px;
+
+}
+
+table {
+    border: 2px solid rgba(255, 255, 255, 0.425);
+    border-radius: 5px;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    
+
+
+}
+
+input {
+    padding: 5px 50px;
+    border-radius: 5px;
+    color: black;
+    border: none;
+    background: transparent; 
+    border: 1px solid black;
+}
+
+#submit {
+    text-align: center;
+    width: 6em;
+    padding: 5px;
+    background-color:rgba(0, 128, 0, 0.397) ;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px black;
+    border : none;
+}
+
+#submit:hover {
+    
+    cursor: pointer;
+    background-color: green;
+
+}
+
+#submit:active {
+    background: linear-gradient(65deg, rgb(216, 196, 216), rgb(231, 231, 134));
+}
+a {
+    text-decoration: none;
+    color : rgb(28, 203, 216);
+}
+h1 {
+    text-align : center;
+    color: linear-gradient(65deg, rgb(145, 8, 8),rgb(83, 79, 79));
+    font-weight: bold;
+    color : black;
+}
+
+label:hover{
+
+    color: rgb(0, 0, 0) ;
+
+}
+
