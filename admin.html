@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - Young Gee @MW</title>
+    <title>Admin Dashboard - Young Gee @MW</title>
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Admin Login</h2>
-        <input type="text" id="adminUsername" placeholder="Username">
-        <input type="password" id="adminPassword" placeholder="Password">
-        <button id="loginBtn">Login</button>
-    </div>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <a href="home.html">Homepage</a>
+            <a href="admin-login.html" id="logoutBtn">Logout</a>
+        </nav>
+    </header>
 
-    <script>
-        document.getElementById("loginBtn").addEventListener("click", () => {
-            const username = document.getElementById("adminUsername").value;
-            const password = document.getElementById("adminPassword").value;
+    <main>
+        <!-- Add Project / Download -->
+        <section class="admin-add-section">
+            <h2>Add New Item</h2>
+            <input type="text" id="adminItemInput" placeholder="Enter project or download name">
+            <select id="adminItemType">
+                <option value="project">Project</option>
+                <option value="download">Download</option>
+            </select>
+            <button id="adminAddBtn">Add Item</button>
+        </section>
 
-            // Simple admin check (front-end demo)
-            if(username === "admin" && password === "admin123") {
-                localStorage.setItem("isAdmin", "true"); // save login state
-                window.location.href = "admin.html";
-            } else {
-                alert("Incorrect username or password!");
-            }
-        });
-    </script>
+        <!-- Display Items -->
+        <section class="admin-items-section">
+            <h2>Items List</h2>
+            <div id="adminItemContainer" class="card-container"></div>
+        </section>
+
+        <!-- Manage Comments -->
+        <section class="admin-comments-section">
+            <h2>User Comments</h2>
+            <div id="adminCommentContainer" class="card-container"></div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
 </body>
 </html>
